@@ -1,0 +1,57 @@
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="navbar-container">
+            <!-- Logo -->
+            <div class="navbar-header pull-left">
+                <a href="#" class="navbar-brand">
+                    <small>
+                        <img src="__admin__images/logo.png" alt="">
+                    </small>
+                </a>
+            </div>
+            <!-- /Logo -->
+            <!-- 折叠按钮 -->
+            <div class="sidebar-collapse" id="sidebar-collapse">
+                <i class="collapse-icon fa fa-bars"></i>
+            </div>
+            <!-- /折叠按钮 -->
+            <!-- 账号及设置区域 -->
+            <div class="navbar-header pull-right">
+                <div class="navbar-account">
+                    <ul class="account-area">
+                        <li>
+                            <a class="login-area dropdown-toggle" data-toggle="dropdown">
+                                <div class="avatar" title="View your public profile">
+                                    <img src="__admin__images/adam-jansen.jpg">
+                                </div>
+                                <section>
+                                    <h2><span class="profile"><span>{$Request.session.username}</span></span></h2>
+                                </section>
+                            </a>
+                            <!--登陆及下拉菜单-->
+                            <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
+                                <li class="username"><a>David Stevenson</a></li>
+                                <li class="dropdown-footer">
+                                    <a href="{:url('admin/admin/logout')}">
+                                        退出登录
+                                    </a>
+                                </li>
+                                <li class="dropdown-footer">
+                                    <a href="{:url('admin/admin/edit',['id'=>$Request.session.id])}">
+                                        修改密码
+                                    </a>
+                                </li>
+                            </ul>
+                            <!--/登陆及下拉菜单-->
+                        </li>
+                        <!-- /Account Area -->
+                        <!--Note: notice that setting div must start right after account area list.
+                        no space must be between these elements-->
+                        <!-- Settings -->
+                    </ul>
+                </div>
+            </div>
+            <!-- /账号及设置区域 -->
+        </div>
+    </div>
+</div>

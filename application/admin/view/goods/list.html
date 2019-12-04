@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- 引入头部样式 -->
+    {include file="common/head" /}
+</head>
+
+<body>
+    <!-- 头部 -->
+    <!-- 引入头部 -->
+    {include file="common/top" /}
+    <!-- /头部 -->
+
+    <div class="main-container container-fluid">
+        <div class="page-container">
+
+            <!-- 左边栏 -->
+            <!-- 引入左边栏 -->
+            {include file="common/left" /}
+            <!-- /左边栏 -->
+
+
+            <!-- 页面内容容器 -->
+            <div class="page-content">
+                <!-- 页面面包屑导航 -->
+                <div class="page-breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="{:url('admin/index/index')}">主页</a>
+                        </li>
+                        <li class="active">商品管理</li>
+                    </ul>
+                </div>
+                <!-- /页面面包屑导航 -->
+
+                <!-- 页面内容 -->
+                <div class="page-body">
+                        <button type="button" tooltip="添加用户" class="btn btn-sm btn-azure btn-addon"
+                            onClick="javascript:window.location.href = '{:url('admin/goods/add')}'"> <i class="fa fa-plus"></i>
+                            添加商品
+                        </button>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-12">
+                                <div class="widget">
+                                    <div class="widget-body">
+                                        <div role="grid" id="editabledatatable_wrapper"
+                                            class="dataTables_wrapper form-inline no-footer">
+                                            <table
+                                                class="table table-striped table-hover table-bordered dataTable no-footer"
+                                                id="editabledatatable" aria-describedby="editabledatatable_info">
+                                                <thead>
+                                                    <tr role="row">
+                                                        <th class="sorting_desc" tabindex="0"
+                                                            aria-controls="editabledatatable" rowspan="1" colspan="1"
+                                                            aria-label="Username: activate to sort column ascending" style="width: 191px;"
+                                                            aria-sort="descending">
+                                                            <font style="vertical-align: inherit;">
+                                                                <font style="vertical-align: inherit;">
+                                                                    商品id
+                                                                </font>
+                                                            </font>
+                                                        </th>
+                                                        <th class="sorting" tabindex="0" aria-controls="editabledatatable"
+                                                            rowspan="1" colspan="1" aria-label="Full Name: activate to sort column ascending" style="width: 286px;">
+                                                            <font style="vertical-align: inherit;">
+                                                                <font style="vertical-align: inherit;">
+                                                                    商品名称
+                                                                </font>
+                                                            </font>
+                                                        </th>
+                                                          <th class="sorting" tabindex="0" aria-controls="editabledatatable"
+                                                            rowspan="1" colspan="1" aria-label="Full Name: activate to sort column ascending" style="width: 286px;">
+                                                            <font style="vertical-align: inherit;">
+                                                                <font style="vertical-align: inherit;">
+                                                                    商品价格
+                                                                </font>
+                                                            </font>
+                                                        </th>
+                                                          <th class="sorting" tabindex="0" aria-controls="editabledatatable"
+                                                            rowspan="1" colspan="1" aria-label="Full Name: activate to sort column ascending" style="width: 286px;">
+                                                            <font style="vertical-align: inherit;">
+                                                                <font style="vertical-align: inherit;">
+                                                                    上架状态
+                                                                </font>
+                                                            </font>
+                                                        </th>
+                                                        <th class="sorting" tabindex="0" aria-controls="editabledatatable"
+                                                            rowspan="1" colspan="1" aria-label="Full Name: activate to sort column ascending" style="width: 286px;">
+                                                            <font style="vertical-align: inherit;">
+                                                                <font style="vertical-align: inherit;">
+                                                                    商品总数
+                                                                </font>
+                                                            </font>
+                                                        </th>
+                                                          <th class="sorting" tabindex="0" aria-controls="editabledatatable"
+                                                            rowspan="1" colspan="1" aria-label="Full Name: activate to sort column ascending" style="width: 286px;">
+                                                            <font style="vertical-align: inherit;">
+                                                                <font style="vertical-align: inherit;">
+                                                                    已售出
+                                                                </font>
+                                                            </font>
+                                                        </th>
+                                                        <th class="sorting" tabindex="0" aria-controls="editabledatatable"
+                                                            rowspan="1" colspan="1" aria-label="Full Name: activate to sort column ascending" style="width: 286px;">
+                                                            <font style="vertical-align: inherit;">
+                                                                <font style="vertical-align: inherit;">
+                                                                    剩余商品数
+                                                                </font>
+                                                            </font>
+                                                        </th>
+                                                          <th class="sorting" tabindex="0" aria-controls="editabledatatable"
+                                                            rowspan="1" colspan="1" aria-label="Full Name: activate to sort column ascending" style="width: 286px;">
+                                                            <font style="vertical-align: inherit;">
+                                                                <font style="vertical-align: inherit;">
+                                                                    发货方式
+                                                                </font>
+                                                            </font>
+                                                        </th>
+                                                        <th class="sorting_disabled" rowspan="1" colspan="1" aria-label=""
+                                                            style="width: 334px;">
+                                                            <font style="vertical-align: inherit;">
+                                                                <font style="vertical-align: inherit;">
+                                                                    操作
+                                                                </font>
+                                                            </font>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+    
+                                                <tbody>
+                                                    {volist name="list" id="l"}
+                                                    <tr class="odd">
+                                                        <td class=" ">
+                                                            <font style="vertical-align: inherit;">
+                                                                <font style="vertical-align: inherit;">
+                                                                    {$l.id}
+                                                                </font>
+                                                            </font>
+                                                        </td>
+                                                        <td class="center  ">
+                                                            <font style="vertical-align: inherit;">
+                                                                <font style="vertical-align: inherit;">
+                                                                    {$l.goodname}
+                                                                </font>
+                                                            </font>
+                                                        </td>
+                                                         <td class="center  ">
+                                                            <font style="vertical-align: inherit;">
+                                                                <font style="vertical-align: inherit;">
+                                                                    {$l.goodprice}
+                                                                </font>
+                                                            </font>
+                                                        </td>
+                                                         <td class="center  ">
+                                                            <font style="vertical-align: inherit;">
+                                                                <font style="vertical-align: inherit;">
+                                                                    {if($l.goodstatus == 0)}下架中
+                                                                    {else /}上架中
+                                                                    {/if}
+                                                                </font>
+                                                            </font>
+                                                        </td>
+                                                        <td class="center  ">
+                                                            <font style="vertical-align: inherit;">
+                                                                <font style="vertical-align: inherit;">
+                                                                    {$l.goodcount}
+                                                                </font>
+                                                            </font>
+                                                        </td>
+                                                         <td class="center  ">
+                                                            <font style="vertical-align: inherit;">
+                                                                <font style="vertical-align: inherit;">
+                                                                    {$l.goodsold}
+                                                                </font>
+                                                            </font>
+                                                        </td>
+                                                           <td class="center  ">
+                                                            <font style="vertical-align: inherit;">
+                                                                <font style="vertical-align: inherit;">
+                                                                    {$l.goodcount-$l.goodsold}
+                                                                </font>
+                                                            </font>
+                                                        </td>
+                                                         <td class="center  ">
+                                                            <font style="vertical-align: inherit;">
+                                                                <font style="vertical-align: inherit;">
+                                                                    {if($l.goodship == 0)}自动发货
+                                                                    {else /}手动发货
+                                                                    {/if}
+                                                                </font>
+                                                            </font>
+                                                        </td>
+                                                        <td class=" ">
+                                                            <a href="{:url('admin/goods/edit',['id'=>$l.id])}" class="btn btn-info btn-xs edit"><i
+                                                                    class="fa fa-edit"></i>
+                                                                <font style="vertical-align: inherit;">
+                                                                    <font style="vertical-align: inherit;"> 编辑</font>
+                                                                </font>
+                                                            </a>
+                                                            <a href="{:url('admin/goods/del',['id'=>$l.id])}" 
+                                                                onClick="warning('确实要删除吗', '/admin/user/del/id/6.html')"
+                                                                    class="btn btn-danger btn-xs delete"><i
+                                                                    class="fa fa-trash-o"></i>
+                                                                <font style="vertical-align: inherit;">
+                                                                    <font style="vertical-align: inherit;"> 删除</font>
+                                                                </font>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                    {/volist}
+                                                </tbody>
+                                            </table>
+    
+                                            {$list->render()|raw}
+    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            <!-- /页面内容 -->
+        </div>
+        <!-- /页面内容容器 -->
+    </div>
+
+</body>
+<!-- 引入底部js -->
+{include file="common/foot" /}

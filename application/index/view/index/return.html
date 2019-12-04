@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{$conf.sitename}</title>
+    <meta name="keywords" content="{$conf.keywords}">
+    <meta name="Description" content="{$conf.desc}">
+    <link rel="stylesheet" href="__index__tem1/style/index.css">
+    <script src="__index__tem1/style/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <div id="top">
+        <div id="topbar">
+            <div id="topleft">
+                    <img src="{$conf.logo}" alt="">
+            </div>
+            <div id="topright">
+                <a href="{:url('index/index/sel')}">订单查询</a>
+            </div>
+        </div>
+    </div>
+   
+    <div id="order">
+        <h1>订单信息</h1>
+        <h2>订单号:{$data}</h2>
+        <p>说明:请勿关闭此页面</p>
+        <p>您的订单已支付完成,因支付宝收款有延迟,请复制或截图保存此订单号.</p>
+        <p>保存后可在右上角查询订单以提取卡密,或者提取卡密失败联系客服人员.</p>
+    </div>
+
+ 
+
+
+    <div id="msg">
+        <div id="msg_title">
+            <h1>提示信息</h1>
+        </div>
+        <div id="msg_content">
+            <h1 style="color: red;font-size: 16px;" id="msg_msg">提示信息</h1>
+            <input id="msg_submit" type="button" value="确认">
+        </div>
+    </div>
+
+</body>
+</html>
